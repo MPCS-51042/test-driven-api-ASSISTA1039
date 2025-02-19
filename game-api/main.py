@@ -1,13 +1,10 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from database import Database
-# from typing import Dict
 
 app = FastAPI()
 # injected database instance
 app.db = Database()
-
-# games: Dict[str, Dict] = {"name": "NIER", "genre": {"ACT"}}
 
 class Game(BaseModel):
     name: str
